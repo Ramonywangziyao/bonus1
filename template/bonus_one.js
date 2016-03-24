@@ -19,27 +19,34 @@
 	//jQuery STRING TYPED CHECKING     DYNAMIC
 
 	$(document).ready(function() {
-		var tempStr
+		var tempStr;
+		$(".search-predictions").hide();
 		$(".flexsearch-input").keyup(function(){
-			tempStr = $(".flexsearch-input").val()
-			requestData();
-			showData();
+			tempStr = $(".flexsearch-input").val();
+			if(tempStr!="")
+			{
+				$(".search-predictions").show();
+			}
+			else {
+				$(".search-predictions").hide();
+			}
+			$("#a").text(tempStr);
+			$("#b").text(tempStr);
+			$("#c").text(tempStr);
+			$("#d").text(tempStr);
+			$("#e").text(tempStr);
+			$("#f").text(tempStr);
+			$("#g").text(tempStr);
+			$("#h").text(tempStr);
+			$("#i").text(tempStr);
+
+
 		});
 	});
 
 })();
 
-function requestData()
-{
 
-
-}
-showData()
-{
-
-
-
-}
 
 
 	//DYNAMICALLY PASS TYPED STRING TO THE SERVER BY USING AJAX TO REQUEST THE RESULTS
