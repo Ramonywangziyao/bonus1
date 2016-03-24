@@ -11,12 +11,37 @@
 // $.html(), $.text(), etc.
 // keyup events could be helpful to get value of field as the user types
 
+
+
 (function() {
 	// Magic!
 	console.log('Keepin\'n it clean with an external script!');
 	//jQuery STRING TYPED CHECKING     DYNAMIC
 
+	$(document).ready(function() {
+		var tempStr
+		$(".flexsearch-input").keyup(function(){
+			tempStr = $(".flexsearch-input").val()
+			requestData();
+			showData();
+		});
+	});
+
+})();
+
+function requestData()
+{
+
+
+}
+showData()
+{
+
+
+
+}
+
+
 	//DYNAMICALLY PASS TYPED STRING TO THE SERVER BY USING AJAX TO REQUEST THE RESULTS
 
 	//SHOW THE RESULTS IN A TABLE BELOW THE SEARCH BAR BY jQuery
-})();
