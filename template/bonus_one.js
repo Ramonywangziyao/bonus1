@@ -14,4 +14,9 @@
 (function() {
 	// Magic!
 	console.log('Keepin\'n it clean with an external script!');
+	//jQuery STRING TYPED CHECKING     DYNAMIC
+
+	//DYNAMICALLY PASS TYPED STRING TO THE SERVER BY USING AJAX TO REQUEST THE RESULTS
+
+	//SHOW THE RESULTS IN A TABLE BELOW THE SEARCH BAR BY jQuery
 })();
