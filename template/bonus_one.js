@@ -26,29 +26,25 @@
 			if(tempStr!="")
 			{
 				$(".search-predictions").show();
+				$(".search-predictions").animate({height: "200px"});
 			}
 			else {
+				$(".search-predictions").animate({height: "0px"});
 				$(".search-predictions").hide();
 			}
+			//DYNAMICALLY PASS TYPED STRING TO THE SERVER BY USING AJAX TO REQUEST THE RESULTS
+
+
+			//SHOW THE RESULTS IN A DROPDOWN BELOW THE SEARCH BAR BY jQuery
 			$("#a").text(tempStr);
 			$("#b").text(tempStr);
 			$("#c").text(tempStr);
 			$("#d").text(tempStr);
 			$("#e").text(tempStr);
-			$("#f").text(tempStr);
-			$("#g").text(tempStr);
-			$("#h").text(tempStr);
-			$("#i").text(tempStr);
+
 
 
 		});
 	});
 
 })();
-
-
-
-
-	//DYNAMICALLY PASS TYPED STRING TO THE SERVER BY USING AJAX TO REQUEST THE RESULTS
-
-	//SHOW THE RESULTS IN A TABLE BELOW THE SEARCH BAR BY jQuery
