@@ -20,10 +20,11 @@
 		var tempStr;
 		var empty;
 		$(".search-predictions").hide();
-		$(".flexsearch-input").keyup(function(){
+		$(".flexsearch-input").keyup(function(){   //check the key event
 			$('.search-predictions').empty();
 
 			tempStr = $(".flexsearch-input").val();
+			// hide the drop down box when nothing input
 			if(tempStr=="")
 			{
 				$(".search-predictions").animate({height: "0px"});
@@ -31,11 +32,11 @@
 			}
 
 			//DYNAMICALLY PASS TYPED STRING TO THE SERVER BY USING AJAX TO REQUEST THE RESULTS
-
+			//CALLING AJAX METHOD TO GET THE DATA
 			requestAjax(tempStr);
 
 			//SHOW THE RESULTS IN A DROPDOWN BELOW THE SEARCH BAR BY jQuery
-
+			//NO RESULTS IN PREDICTION, GO SEARCH BY SUBMIT
 			$( ".flexsearch-submit" ).on( "click", function(h) {
 				window.open("https://www.google.com/#q="+tempStr);
 		});
@@ -46,6 +47,7 @@
 
 })();
 })();
+//REQUEST METHOD
 function requestAjax(str)
 {
 	$.ajax({
@@ -73,6 +75,7 @@ function requestAjax(str)
 
 			 	}
 			 }
+			 //IF NOTHING FILTERED IN PREDICTION, HIDE DROPBOX
 			 if ( $('.search-predictions').is(':empty')||str=='' ) {
 				 $(".search-predictions").animate({height: "0px"});
 				 $(".search-predictions").hide();
@@ -81,6 +84,7 @@ function requestAjax(str)
 				 $(".search-predictions").show();
 				 $(".search-predictions").animate({height: "200px"});
 			 }
+			 //SEARCH CLICKED ITEM
 			 $( "p" ).on( "click", function(e) {
 				window.open("https://www.google.com/#q="+$(e.target).text());
 		});
@@ -91,7 +95,7 @@ function requestAjax(str)
 
 
 }
-
+//STRING CHECKING
 function stringFilter(x,y)
 {
 	if ( x.toLowerCase().indexOf(y.toLowerCase()) != -1 ) {
